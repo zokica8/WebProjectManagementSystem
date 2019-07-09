@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign Up Page</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/zesiumNew.css" th:href="@{/css/zesiumNew.css}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Istok+Web" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+	th:src="@{/js/jquery-3.4.1.min.js}"></script>
+
+<script type="text/javascript">
+
+function onLoad() {
+	
+	$("#password").keyup(checkPasswordsMatch);
+	$("#repeatPassword").keyup(checkPasswordsMatch);
+	
+	$("form").submit(submitForm);
+	
+}
+
+function submitForm() {
+	var password = $("#password").val();
+	var repeatPassword = $("#repeatPassword").val();
+	
+	if(password != repeatPassword) {
+		alert("Passwords do not match!");
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+function checkPasswordsMatch() {
+	var password = $("#password").val();
+	var repeatPassword = $("#repeatPassword").val();
+	
+	if(password.length > 5 || repeatPassword.length > 5) {
+		if(password == repeatPassword) {
+			$("#message").text("Passwords match!");
+			$("#message").addClass("valid");
+			$("#message").removeClass("error");
+		}
+		else {
+			$("#message").text("Passwords do not match!");
+			$("#message").addClass("error");
+			$("#message").removeClass("valid");
+		}
+	}
+	
+}
+
+$(document).ready(onLoad);
+	
+</script>
+</head>
+<body class=main>
+
+	<th:block th:include="/fragments/navigation :: navigation"></th:block>
+	
+	<h1 th:text="#{signUp}" class="signUp">Sign Up</h1>
+	
+	<div class="signupFormDiv">
+	<form id="form" action="#" th:action="@{/userRegistered}" 
+			th:object="${user}" method="post">
+		<div class="userPart">
+		<p>
+			<input class="form" type="hidden" th:field="*{id}" />
+		</p>
+		<p>
+			<label th:text="#{nameAndSurname}">Name And Surname: </label> <input class="form" type="text"
+				th:field="*{name}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+		</p>
+		<p>
+			<label th:text="#{email}">Email: </label> <input type="text" class="form" th:field="*{email}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+		</p>
+		<p>
+			<label th:text="#{password}">Password: </label> <input type="password" class="form"
+				th:field="*{password}" id="password" name="password" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+		</p>
+		<p>
+			<label th:text="#{repeatPassword}">Repeat Password: </label> <input type="password" class="form"
+				id="repeatPassword" name="repeatPassword" />
+		</p>
+		<span id="message"></span>
+		</div>
+		<div class="companyPart">
+		<p>
+			<label th:text="#{phoneNumber}">Phone Number: </label> <input id="right" type="text" class="form"
+				th:field="*{phoneNumber}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</span>
+		</p>
+		<div th:object="${company}">
+		<p>
+			<input class="form" type="hidden" th:field="*{id}" />
+		</p>
+		<p>
+			<label th:text="#{companyName}">Company Name: </label> <input id="right" type="text" class="form"
+				th:field="*{companyName}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}">Company Name Error</span>
+			
+		</p>
+		<p>
+			<label th:text="#{organizationNumber}">Organization Number: </label> <input id="right" type="text" class="form"
+				th:field="*{organization_number}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('organization_number')}" th:errors="*{organization_number}">Organization Number Error</span>	
+		</p>
+		<p>
+			<label th:text="#{invoiceAddress}">Invoice Address: </label> <input id="right" type="text" class="form"
+				th:field="*{invoice_address}" />
+			<br>
+			<span class="error" th:if="${#fields.hasErrors('invoice_address')}" th:errors="*{invoice_address}">Invoice Address Error</span>
+		</p>
+		</div>
+		</div>
+		<p>
+			<input class="registerButton" type="submit" th:value="#{register}" value="REGISTER">
+		</p>
+	</form>
+	</div>
+
+</body>
+</html>

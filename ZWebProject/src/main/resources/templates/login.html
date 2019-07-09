@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<th:block th:include="/fragments/fragment :: head"></th:block>
+</head>
+<body class="main">
+
+	<th:block th:include="/fragments/navigation :: navigation"></th:block>
+
+	<h1 th:text="#{loginPage}" class="login">Login</h1>
+
+	<form id="form" action="#" th:action="@{/userLoggedIn}"
+		th:object="${login}" method="post">
+		<div id="loginForm">
+		<p>
+			<input class="loginForm" id="center" type="text"
+				th:field="*{email}" placeholder="Email" th:placeholder="#{email}"/> <br> <span class="error"
+				th:text="${email}">${email}</span>
+		</p>
+		<p>
+			<input class="loginForm" type="password"
+				th:field="*{password}" id="password" name="password" placeholder="Password" th:placeholder="#{password}"/> <br> <span
+				class="error" th:text="${password}">${password}</span>
+		</p>
+		</div>
+		<p>
+			<input class="loginButton" type="submit" th:value="#{login}" value="LOGIN">
+		</p>
+	</form>
+
+
+	<br>
+	<a class="forgot" th:text="#{forgotPassword}" th:href="@{/forgotPassword}">Forgot Password?</a>
+
+</body>
+</html>

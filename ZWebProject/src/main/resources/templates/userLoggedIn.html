@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User logged In!</title>
+<th:block th:include="/fragments/fragment :: head"></th:block>
+</head>
+<body class="main">
+
+<h3 th:text="#{loggedIn}">Congratulations! You have successfully logged in!</h3>
+
+<h3 th:text="${user}">Welcome ${user}!</h3>
+
+<br>
+<p th:text="#{homeLink}">Home Link:</p>
+<a th:text="#{homePage}" th:href="@{/}">Home</a>
+
+
+</body>
+</html>

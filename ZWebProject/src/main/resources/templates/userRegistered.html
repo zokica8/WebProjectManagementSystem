@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registered</title>
+<th:block th:include="/fragments/fragment :: head"></th:block>
+</head>
+<body class="main">
+
+<p th:text="#{success}">User successfully registered!!</p>
+<br>
+<p th:text="#{homeLink}">
+Home Link:
+</p>
+<a th:text="#{homePage}" th:href="@{/}">Home</a>
+
+<br>
+<p th:text="#{loginLink}">
+Login Link:
+</p>
+<a th:text="#{login}" th:href="@{/login}">Login Page</a>
+
+</body>
+</html>

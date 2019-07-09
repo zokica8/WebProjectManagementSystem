@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Access Denied</title>
+<th:block th:include="/fragments/fragment :: head"></th:block>
+</head>
+<body>
+
+<h2 th:text="#{denied}">Sorry, you do not have the permission to view this page.</h2>
+
+<a th:text="#{homePage}" th:href="@{/}">Home</a>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<div th:fragment="navigation" >
+	<img class="homeImage" src="../static/images/Zesium-logo_sign_up.png"
+		th:src="@{/images/Zesium-logo_sign_up.png}">
+
+	<ul>
+		<li><a th:text="#{homePage}" th:href="@{/}">Home</a></li>
+		<li><a th:text="#{fleatyApp}" th:href="@{/fleaty}">Fleaty App</a></li>
+		<li><a th:text="#{howItWorks}" th:href="@{/howItWorks}">How it
+				Works</a></li>
+		<li><a th:text="#{aboutUs}" th:href="@{/aboutUs}">About Us</a></li>
+		<li th:if="${session.user == null}">
+		<a th:text="#{login}" th:href="@{/login}">Login</a>/<a th:text="#{signUp}" th:href="@{/signUp}">Signup</a>
+		</li>
+		<li th:if="${session.user != null}">
+		<a th:text="#{logout}" href="javascript: document.logoutForm.submit()" role="menuItem">Logout</a>
+		<form name="logoutForm" th:action="@{logout}" method="post"> 
+			<input hidden="true" type="submit" th:value="#{logout}">
+		</form>
+		</li>
+		<li><img src="../static/images/srb_flag.png"
+			th:src="@{/images/srb_flag.png}">
+			<a th:href="@{/?lang=sr_Latn_RS}">SRB</a>/<a th:href="@{/?lang=en}">EN</a><img
+			src="../static/images/eng_flag.png" th:src="@{/images/eng_flag.png}">
+		</li>
+	</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<th:block th:include="/fragments/fragment :: head"></th:block>
+</head>
+<body class="main">
+	
+	<th:block th:include="/fragments/navigation :: navigation"></th:block>
+
+	<form th:action="@{/signUp}">
+		<div class="wrapper" th:if="${session.user == null}">
+			<input class="signUpButton" value="Sign Up" th:value="#{signupButton}" type="submit">
+		</div>
+
+	</form>
+	
+	<img class="homePageImage" src="../static/images/home_image.png"
+		th:src="@{/images/home_image.png}">
+
+</body>
+</html>

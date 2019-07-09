@@ -1,0 +1,189 @@
+@charset "ISO-8859-1";
+body.main {
+	background-color: #e6e6e6;
+}
+
+img.homeImage {
+	padding-left: 100px; 
+	display: inline;
+}
+
+ul {
+	display: inline-block;
+	float: right;
+	padding-right: 160px;
+}
+
+li {
+	display: inline-block;
+	margin: 5px 0;
+	padding-right: 30px;
+	font-family: Montserrat;
+	padding-top: 10px;
+	color: black;
+}
+
+input.signUpButton {
+	background-color:orange;
+	color: white;
+	position: relative;
+	bottom: 100px;
+	font-size: 32px;
+	font-family: Montserrat;
+	bottom: 100px;
+}
+
+img.homePageImage {
+	position: relative;
+	left: 550px;
+	bottom: 40px;
+}
+
+div.wrapper {
+	text-align: center;
+	position: relative;
+	right: 400px;
+	top: 600px;
+	font-family: Montserrat;
+}
+
+.error {
+	font-size: small;
+	color: red;
+	margin-left: 10px;
+	font-family: Montserrat;
+}
+
+.valid {
+	font-size: small;
+	color: green;
+	margin-left: 10px;
+	font-family: Montserrat;
+}
+
+h1.signUp {
+	text-align: center;
+	font-family: Montserrat;
+}
+
+h1.login {
+	text-align: center;
+	font-family: Montserrat;
+}
+
+input.registerButton {
+	background-color:orange;
+	color: white;
+	display: inline-block;
+	font-size: 32px;
+	text-align: center;
+	position: relative;
+	left: 260px;
+	top: 20px;
+	font-family: Montserrat;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	line-height: 20px;
+	font-family: Montserrat;
+	text-align: right;
+}
+
+a {
+	font-family: Montserrat;
+	color:black;
+	text-decoration: none;
+}
+
+input.loginButton {
+	background-color:orange;
+	color: white;
+	position: relative;
+	left: 725px;
+	top: 15px;
+	font-size: 32px;
+	font-family: Montserrat;
+	text-align: center;
+}
+
+input.form {
+	width: 300px;
+	height: 28px;
+	font-family: Istok Web;
+	font-size: 18pt;
+	display: inline-block;
+}
+
+#right {
+	position: relative;
+	align-content: flex-end;
+}
+
+#center {
+	display: inline-block;
+	align-content: center;
+}
+
+input.submitButton {
+	background-color:orange;
+	color: white;
+	position: relative;
+	left: 725px;
+	font-size: 32px;
+	font-family: Montserrat;
+	text-align: center;
+}
+
+.loginForm {
+	width: 300px;
+	height: 28px;
+	font-family: Istok Web;
+	font-size: 18pt;
+	display: inline-block;
+}
+
+#loginForm {
+	position: relative;
+	text-align: center;
+	top: 10px;
+}
+
+a.forgot {
+	display: block;
+	text-align: center;
+	top: 30px;
+}
+
+div.userPart {
+	display: inline-block;
+}
+
+div.companyPart {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 80px; 
+}
+
+.signupFormDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.forgotPasswordImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 13%;
+}
+
+div.forgotDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
